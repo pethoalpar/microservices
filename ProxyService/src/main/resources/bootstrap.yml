@@ -1,0 +1,13 @@
+spring:  
+  application:
+    name: proxy-service
+  profiles:
+    active:
+    - ${SPRING_PROFILE:dev}
+  cloud:
+    config:
+      fail-fast: ${CONFIG-FAIL-FAST:false}
+      retry:
+        max-attempts: 100
+      uri:
+      - ${CONFIG_SERVER_URL:http://localhost:8889/}  
